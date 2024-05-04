@@ -13,7 +13,7 @@
         "outputPath": "dist/apps/order",
         "index": "apps/order/src/index.html",
         "baseHref": "/",
-        "main": "apps/order/src/main.ts",
+        "main": "apps/order/src/main.tsx",
         "tsConfig": "apps/order/tsconfig.app.json",
         "assets": ["apps/order/src/favicon.ico", "apps/order/src/assets"],
         "styles": ["apps/order/src/styles.scss"],
@@ -51,7 +51,7 @@
       "options": {
         "buildTarget": "order:build",
         "hmr": true,
-        "port": 3004
+        "port": 3002
       },
       "configurations": {
         "development": {

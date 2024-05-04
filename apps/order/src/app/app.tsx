@@ -1,12 +1,15 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-import NxWelcome from './nx-welcome';
+import { Provider } from 'react-redux';
+
+import Card from '../components/CardItem';
+import { store } from '../redux/store.slice';
 
 export function App() {
   return (
-    <div>
-      <NxWelcome title="order" />
-    </div>
+    <Provider store={store}>
+      <div>
+        <Card />
+      </div>
+    </Provider>
   );
 }
 

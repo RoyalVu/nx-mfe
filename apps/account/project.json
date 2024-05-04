@@ -52,7 +52,7 @@
       "options": {
         "buildTarget": "account:build",
         "hmr": true,
-        "port": 3005
+        "port": 3003
       },
       "configurations": {
         "development": {

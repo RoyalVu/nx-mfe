@@ -29,6 +29,7 @@
     "react/react-in-jsx-scope": "off",
     "linebreak-style": "error",
     "react/jsx-props-no-spreading": "off",
+    "@typescript-eslint/unbound-method": "off",
     "no-console": "error",
     "no-var": "error",
     "react/jsx-sort-props": [

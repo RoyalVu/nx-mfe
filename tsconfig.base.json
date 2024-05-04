@@ -16,9 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@mfe-tutorial/ui": ["packages/ui/src/index.ts"],
+      "account/AccountContainer": ["apps/account/src/app/app"],
       "info/InfoContainer": ["apps/info/src/app/app"],
-      "order/OrderContainer": ["apps/order/src/app/app"],
-      "account/AccountContainer": ["apps/account/src/app/app"]
+      "order/OrderContainer": ["apps/order/src/app/app"]
     }
   },
   "exclude": ["node_modules", "tmp"]
