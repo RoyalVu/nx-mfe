@@ -20,8 +20,6 @@ export function DataProvider({ children }: SharedDataContextProps) {
     [accessToken, counter]
   );
 
-  return (
-    <DataContext.Provider value={{ values }}>{children}</DataContext.Provider>
-  );
+  return <DataContext.Provider value={values}>{children}</DataContext.Provider>;
 }
 export default DataProvider;
