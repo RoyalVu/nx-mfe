@@ -71,6 +71,23 @@
         "lintFilePatterns": ["apps/order/**/*.{ts,tsx,js,jsx}"]
       }
     },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "order:build",
+        "watch": false,
+        "port": 3002
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "order:build:development"
+        },
+        "production": {
+          "buildTarget": "order:build:production"
+        }
+      }
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -82,23 +99,6 @@
         "ci": {
           "ci": true,
           "codeCoverage": true
-        }
-      }
-    },
-    "serve-static": {
-      "executor": "@nx/web:file-server",
-      "defaultConfiguration": "production",
-      "options": {
-        "buildTarget": "order:build",
-        "watch": false,
-        "port": 3004
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "order:build:development"
-        },
-        "production": {
-          "buildTarget": "order:build:production"
         }
       }
     }
