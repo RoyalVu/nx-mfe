@@ -18,6 +18,9 @@
       "@mfe-nx/data": ["apps/data/src"],
       "@mfe-nx/ui": ["packages/ui/src/index.ts"],
       "account/AccountContainer": ["apps/account/src/app/app"],
+      "authentication/AuthenticationContainer": [
+        "apps/authentication/src/app/app"
+      ],
       "info/InfoContainer": ["apps/info/src/app/app"],
       "order/OrderContainer": ["apps/order/src/app/app"]
     }

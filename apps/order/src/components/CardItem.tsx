@@ -16,11 +16,15 @@ export function CardItem() {
   };
 
   return (
-    <div>
-      <button onClick={addF} type="button">
+    <div className="flex items-center justify-center flex-col">
+      <button
+        className="button p-2 rounded-md mx-auto bg-accent"
+        onClick={addF}
+        type="button"
+      >
         Add
       </button>
-      <div className="flex flex-col gap-2">
+      <div className="flex gap-2">
         {card.map((item) => (
           <p className=" text-purple-700 font-semibold mx-2" key={item}>
             {item}
