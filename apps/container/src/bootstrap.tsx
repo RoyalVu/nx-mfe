@@ -1,3 +1,4 @@
+import { DataProvider } from '@mfe-nx/data-context';
 import { configureStore } from '@reduxjs/toolkit';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
@@ -21,9 +22,11 @@ const root = ReactDOM.createRoot(element);
 root.render(
   <StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <DataProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </DataProvider>
     </Provider>
   </StrictMode>
 );

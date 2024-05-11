@@ -17,6 +17,7 @@
     "paths": {
       "@mfe-nx/data": ["apps/data/src"],
       "@mfe-nx/ui": ["packages/ui/src/index.ts"],
+      "@mfe-nx/data-context": ["shared/data-context/src/index"],
       "account/AccountContainer": ["apps/account/src/app/app"],
       "authentication/AuthenticationContainer": [
         "apps/authentication/src/app/app"

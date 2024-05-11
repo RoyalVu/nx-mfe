@@ -23,10 +23,11 @@ import {
  * @param {LoginRequest} info The user to log in.
  * @returns {Promise<BaseServiceResponse<LoginResponse>>} A Promise that resolves to a LoginResponse.
  */
-export const login = async (
+export const loginApi = async (
   info: LoginRequest
 ): Promise<BaseServiceResponse<LoginResponse>> => {
   try {
+    console.log('run loginApi');
     const infos = loginRequestSchema.parse(info);
     const response = await storeApiMethods.post<LoginRequest, LoginResponse>(
       AUTH_PATHS.AUTH.LOGIN,
@@ -40,6 +41,7 @@ export const login = async (
     };
   } catch (e) {
     // TODO: test
+    console.log('err loginApi');
     return {
       data: {
         access_token: 'fake_access_token_123',
@@ -53,7 +55,7 @@ export const login = async (
  * @description Gets the user profile.
  * @returns {Promise<BaseServiceResponse<UserProfileResponse>>} A Promise that resolves to a UserProfileResponse.
  */
-export const getUserProfile = async (): Promise<
+export const getUserProfileApi = async (): Promise<
   BaseServiceResponse<UserProfileResponse>
 > => {
   try {
@@ -76,7 +78,7 @@ export const getUserProfile = async (): Promise<
  * @param {RefreshTokenRequest} refreshToken The refresh token.
  * @returns {Promise<BaseServiceResponse<RefreshTokenResponse>>} A Promise that resolves to a RefreshTokenResponse.
  */
-export const refreshToken = async (
+export const refreshTokenApi = async (
   token: RefreshTokenRequest
 ): Promise<BaseServiceResponse<RefreshTokenResponse>> => {
   try {

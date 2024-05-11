@@ -79,7 +79,7 @@
       "defaultConfiguration": "production",
       "options": {
         "buildTarget": "authentication:build",
-        "watch": false,
+        "watch": true,
         "port": 3004
       },
       "configurations": {
