@@ -23,7 +23,7 @@ const prodConfig: ModuleFederationConfig = {
    *   ['app2', 'http://example.com/path/to/app2/remoteEntry.js'],
    * ]
    */
-  remotes: [['info', 'https://animated-lollipop-8d4ee8.netlify.app/']],
+  // remotes: [[]],
 };
 
 // Nx plugins for webpack to build config object from Nx options and context.
