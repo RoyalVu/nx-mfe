@@ -12,9 +12,11 @@ export function getEnvParams(
 ): [Record<string, string> | null, z.infer<typeof schema> | null] {
   const data: Record<string, unknown> = {};
   const errors: Record<string, string> = {};
+
   for (const key in schema.shape) {
     if (Object.prototype.hasOwnProperty.call(schema.shape, key)) {
       const value = env[key];
+
       if (value === undefined) {
         errors[key] = `ERROR (serif) : Missing required env var: ${key}`;
       } else {
@@ -22,18 +24,22 @@ export function getEnvParams(
           data[key] = (schema.shape[key] as z.ZodTypeAny)?.parse(value);
         } catch (error) {
           let message = 'INFO (serif) : Invalid env var';
+
           if (error instanceof z.ZodError) {
             message = `ERROR (serif) : ${error.errors[0].message}`;
           } else if (error instanceof Error) {
             message = `ERROR (serif) : ${error.message}`;
           }
+
           errors[key] = message;
         }
       }
     }
   }
+
   if (Object.keys(errors).length) {
     return [errors, null];
   }
+
   return [null, data as z.infer<typeof schema>];
 }

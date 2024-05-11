@@ -15,9 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mfe-nx/data": ["apps/data/src"],
-      "@mfe-nx/ui": ["packages/ui/src/index.ts"],
+      "@mfe-nx/data": ["shared/data/src/index"],
       "@mfe-nx/data-context": ["shared/data-context/src/index"],
+      "@mfe-nx/shared/data": ["shared/data/src/index.ts"],
+      "@mfe-nx/ui": ["packages/ui/src/index.ts"],
       "account/AccountContainer": ["apps/account/src/app/app"],
       "authentication/AuthenticationContainer": [
         "apps/authentication/src/app/app"

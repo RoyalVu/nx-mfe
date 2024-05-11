@@ -1,6 +1,7 @@
 import { z } from 'zod';
 
 import { getEnvParams } from '../helpers/environment.helpers';
+
 /**
  * @description The environment schema for the container app.
  */
@@ -20,15 +21,19 @@ const envSchema = z.object({
   NX_TASK_TARGET_CONFIGURATION: z.string(),
   NX_TASK_HASH: z.string(),
 });
+
 function initEnvironment() {
   const [errors, env] = getEnvParams(
     process.env as Record<string, string>,
     envSchema
   );
+
   if (errors) {
     window.console.error(errors);
     throw new Error('Environment variables are not valid');
   }
+
   return env as z.infer<typeof envSchema>;
 }
+
 export { initEnvironment };

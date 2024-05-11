@@ -1,6 +1,7 @@
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 import { storeApi } from './store.api';
+
 /**
  * @description Sends a GET request to the specified URL of postApi.
  * @param {string} url The URL to send the request to.
@@ -12,8 +13,10 @@ async function get<TResponse>(
   config?: AxiosRequestConfig
 ): Promise<AxiosResponse<TResponse>> {
   const response = await storeApi.get<TResponse>(url, config);
+
   return response;
 }
+
 /**
  * @description Sends a POST request to the specified URL of postApi.
  * @param {string} url The URL to send the request to.
@@ -27,6 +30,7 @@ export const post = async <TRequest, TResponse>(
   config?: AxiosRequestConfig
 ): Promise<AxiosResponse<TResponse>> => {
   const response = await storeApi.post<TResponse>(url, data, config);
+
   return response;
 };
 /**
@@ -42,6 +46,7 @@ export const put = async <TRequest, TResponse>(
   config?: AxiosRequestConfig
 ): Promise<AxiosResponse<TResponse>> => {
   const response = await storeApi.put<TResponse>(url, data, config);
+
   return response;
 };
 /**
@@ -57,6 +62,7 @@ export const patch = async <TRequest, TResponse>(
   config?: AxiosRequestConfig
 ): Promise<AxiosResponse<TResponse>> => {
   const response = await storeApi.patch<TResponse>(url, data, config);
+
   return response;
 };
 /**
@@ -70,8 +76,10 @@ export const remove = async <TResponse>(
   config?: AxiosRequestConfig
 ): Promise<AxiosResponse<TResponse>> => {
   const response = await storeApi.delete<TResponse>(url, config);
+
   return response;
 };
+
 const storeApiMethods = {
   get,
   post,

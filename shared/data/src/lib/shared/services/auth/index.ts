@@ -2,7 +2,6 @@ import { storeApiMethods } from '../../apis';
 import { handleErrorResponse } from '../../helpers';
 import { BaseServiceResponse } from '../common/types';
 import { AUTH_PATHS } from './constants';
-
 import {
   loginRequestSchema,
   loginResponseSchema,
@@ -27,13 +26,17 @@ export const loginApi = async (
   info: LoginRequest
 ): Promise<BaseServiceResponse<LoginResponse>> => {
   try {
+    // eslint-disable-next-line no-console
     console.log('run loginApi');
     const infos = loginRequestSchema.parse(info);
+
     const response = await storeApiMethods.post<LoginRequest, LoginResponse>(
       AUTH_PATHS.AUTH.LOGIN,
       infos
     );
+
     const data = loginResponseSchema.parse(response.data);
+
     return {
       data,
       message: response.statusText,
@@ -41,7 +44,9 @@ export const loginApi = async (
     };
   } catch (e) {
     // TODO: test
+    // eslint-disable-next-line no-console
     console.log('err loginApi');
+
     return {
       data: {
         access_token: 'fake_access_token_123',
@@ -62,6 +67,7 @@ export const getUserProfileApi = async (): Promise<
     const response = await storeApiMethods.get<UserProfileResponse>(
       AUTH_PATHS.AUTH.PROFILE
     );
+
     const data = userProfileResponseSchema.parse(response.data);
 
     return {
@@ -83,11 +89,14 @@ export const refreshTokenApi = async (
 ): Promise<BaseServiceResponse<RefreshTokenResponse>> => {
   try {
     const values = refreshTokenRequestSchema.parse(token);
+
     const response = await storeApiMethods.post<
       RefreshTokenRequest,
       RefreshTokenResponse
     >(AUTH_PATHS.AUTH.REFRESH_TOKEN, values);
+
     const data = refreshTokenResponseSchema.parse(response.data);
+
     return {
       data,
       message: response.statusText,

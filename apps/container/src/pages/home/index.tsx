@@ -4,13 +4,13 @@ import { ENV } from '@mfe-nx/data';
 import { useDataContext } from '@mfe-nx/data-context';
 
 export default function HomePage() {
-  const { accessToken } = useDataContext();
+  const { accessToken, counter } = useDataContext();
 
   return (
     <div className="h-[90vh] flex flex-col justify-center items-center bg-gray-100 gap-y-4 w-full">
       <p className="text-[200px]">Container</p>
-      {/* <p className="text-[200px] animate-wiggle">Container</p> */}
-      <h1 className="text-4xl font-bold text-primary">
+      <p className="text-xl">Counter: {counter}</p>
+      <h1 className="text-xl font-bold text-primary">
         Welcome to the Container!
       </h1>
       <p className="text-xl font-bold text-primary">

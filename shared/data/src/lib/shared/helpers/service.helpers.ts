@@ -1,5 +1,6 @@
 import { AxiosError } from 'axios';
 import { ZodError } from 'zod';
+
 import { BaseServiceResponse } from '../services/common/types';
 
 /**
@@ -22,20 +23,25 @@ export const handleErrorResponse = <T>(
   message: string | undefined = 'Unknown error occurred.'
 ): BaseServiceResponse<T> => {
   let status: number | undefined;
+
   if (error instanceof Error) {
     message = error.message;
     status = 500;
   }
+
   if (error instanceof AxiosError) {
     message = error.message;
     status = error.response?.status;
   }
+
   if (error instanceof ZodError) {
     const paths = error.errors.map((err) => err.path[1]);
     const uniquePaths = [...new Set(paths)];
+
     message = `Error in fields: ${uniquePaths.join(', ')}`;
     status = 400;
   }
+
   return {
     data: null,
     message,
@@ -59,10 +65,12 @@ export const getServiceResponseMessage = (
   replacerValues?: string[]
 ): string => {
   let result = message;
+
   if (replacerValues) {
     replacerValues.forEach((item, index) => {
       result = result.replace(`{${index}}`, item);
     });
   }
+
   return result;
 };

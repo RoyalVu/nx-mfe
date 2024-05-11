@@ -6,9 +6,11 @@ import { handleErrorResponse } from '../helpers';
 // TODO (serif) : handle request here
 export const requestInterceptor = (config: InternalAxiosRequestConfig) => {
   const token = localStorage.getItem(ENV.NX_ACCESS_TOKEN_KEY);
+
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+
   return config;
 };
 

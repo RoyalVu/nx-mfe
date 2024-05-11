@@ -4,7 +4,6 @@ import {
   requestInterceptor,
   responseInterceptor,
 } from '../lib/api.interceptors';
-
 import { api } from './base.api';
 
 export const storeApi = api.create({
