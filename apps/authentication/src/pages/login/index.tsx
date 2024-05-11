@@ -1,22 +1,18 @@
 import { loginApi } from '@mfe-nx/data';
 import { useDataContext } from '@mfe-nx/data-context';
-import { useEffect } from 'react';
 
 export default function HomePage() {
   const context = useDataContext();
 
-  useEffect(() => {
-    console.log('context :', context);
-  });
-
   const loginF = () => {
-    console.log('run');
     loginApi({
       email: 'email',
       password: 'pw',
     })
       .then((rs) => {
-        console.log('rs :', rs);
+        // TODO: handle save data to state store local of project
+
+        // Save token to global store of host & other remote
         context.setAccessToken(rs.data?.access_token);
       })
       .catch(() => {});

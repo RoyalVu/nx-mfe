@@ -8,7 +8,8 @@
     "serve:container": "pnpm exec nx run container:serve-static --configuration=production",
     "dev:info": "pnpm exec nx run info:serve --configuration=development",
     "serve:info": "pnpm exec nx run info:serve-static --configuration=production",
-    "dev:all": "pnpm exec nx run-many --parallel --target=serve --projects=container,info,order,account --maxParallel=100",
+    "dev:authentication": "pnpm exec nx run authentication:serve --configuration=development",
+    "dev:all": "pnpm exec nx run-many --parallel --target=serve --projects=container,info,order,account,authentication --maxParallel=100",
     "prepare": "husky"
   },
   "private": true,
@@ -27,7 +28,8 @@
     "react-router-dom": "6.11.2",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
