@@ -1,5 +1,6 @@
 // import { HoverCardDemo } from '../../components/hover-card';
-import SocialLinks from '../../components/social-links';
+// import SocialLinks from '../../components/social-links';
+import { ENV } from '@mfe-nx/data';
 
 export default function HomePage() {
   return (
@@ -9,7 +10,9 @@ export default function HomePage() {
       <h1 className="text-4xl font-bold text-primary">
         Welcome to the Container!
       </h1>
-      <SocialLinks />
+      <p className="text-xl font-bold text-primary">
+        ENV Access token: {ENV.NX_ACCESS_TOKEN_KEY}
+      </p>
     </div>
   );
 }

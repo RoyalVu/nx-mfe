@@ -1,4 +1,4 @@
-import { Badge } from '@mfe-tutorial/ui';
+import { Badge } from '@mfe-nx/ui';
 import { BadgeCheck } from 'lucide-react';
 
 const socialLinks = [

@@ -19,7 +19,8 @@
         "styles": ["apps/order/src/styles.scss"],
         "scripts": [],
         "isolatedConfig": true,
-        "webpackConfig": "apps/order/webpack.config.ts"
+        "webpackConfig": "apps/order/webpack.config.ts",
+        "postcssConfig": "apps/order/postcss.config.js"
       },
       "configurations": {
         "development": {
