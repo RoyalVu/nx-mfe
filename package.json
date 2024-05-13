@@ -6,6 +6,7 @@
     "lint": "pnpm exec nx run-many --target=lint --all",
     "dev:container": "pnpm exec nx run container:serve --configuration=development",
     "serve:container": "pnpm exec nx run container:serve-static --configuration=production",
+    "dev:shell": "pnpm exec nx run shell:serve --configuration=development",
     "dev:info": "pnpm exec nx run info:serve --configuration=development",
     "serve:info": "pnpm exec nx run info:serve-static --configuration=production",
     "dev:authentication": "pnpm exec nx run authentication:serve --configuration=development",
