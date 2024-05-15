@@ -1,6 +1,7 @@
+import '../styles.css';
+
 import * as React from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
-// import { Button } from '@mfe-nx/ui';
 
 const HomePage = React.lazy(() => import('../pages/home'));
 

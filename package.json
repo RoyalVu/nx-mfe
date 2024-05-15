@@ -10,8 +10,9 @@
     "dev:info": "pnpm exec nx run info:serve --configuration=development",
     "serve:info": "pnpm exec nx run info:serve-static --configuration=production",
     "dev:authentication": "pnpm exec nx run authentication:serve --configuration=development",
-    "dev:all": "pnpm exec nx run-many --parallel --target=serve --projects=container,info,order,account,authentication --maxParallel=100",
-    "prepare": "husky"
+    "dev:all": "pnpm exec nx run-many --parallel --target=serve --projects=info,order,account,authentication --maxParallel=100",
+    "prepare": "husky",
+    "build:container": "nx build container"
   },
   "private": true,
   "dependencies": {
